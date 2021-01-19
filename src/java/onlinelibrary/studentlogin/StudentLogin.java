@@ -37,6 +37,7 @@ public class StudentLogin extends HttpServlet {
 			String username=request.getParameter("username");
 			String pass=request.getParameter("password");
 
+                        /*
 			// check strength requirements
 			String message;
 			try {
@@ -46,7 +47,7 @@ public class StudentLogin extends HttpServlet {
 				message = e.getMessage();
 			}
 			request.setAttribute("message", message);
-
+                        */
 			if(LoginDaoStudent.getName(username, pass) != null) {
 				HttpSession session = request.getSession(true);
 				ArrayList<Book> bookslist = new ArrayList<Book>();
@@ -57,8 +58,9 @@ public class StudentLogin extends HttpServlet {
 				//request.setAttribute("book", issuelist);
 
 				url = "/studentDashboard.jsp";
+                                
+                              
 			}
-
 			else {
 				PrintWriter out=response.getWriter();
 				out.println("<script>window.location=\"studentLogin.jsp\";alert(\"Student Username Or Password Is Incorrect ...!\")</script>");

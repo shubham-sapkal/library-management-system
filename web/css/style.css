@@ -1,0 +1,113 @@
+h4, h5, h6,
+h1, h2, h3 {margin: 0;}
+ul, ol {margin: 0;}
+p {margin: 0;}
+th{text-align: center;}
+
+body{
+	background-image: url("../images/library-header.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+    background-size: cover;
+    
+}
+
+label {
+    display: inline-block;
+    width:100px;
+    text-align: right;
+}
+
+.navbar{
+	background-color: blanchedalmond; 
+}
+
+.well{
+	background-color:blanchedalmond ;
+	border: 0px;
+    box-shadow: none;
+    margin-left: 39px;
+}
+
+button {
+    background-color: #008CBA;
+    border: none;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+p1 {
+	text-align: center ;
+}
+
+.content{
+	text-align: center;
+	padding: 12px;
+}
+
+#main-content{
+	padding-top: 50px;
+}
+
+.login-form{
+	margin: 100px;
+	padding: 60px;
+	text-align: center;
+    width:80%;
+    border: 0px;
+    box-shadow: none;
+}
+
+#login-line{
+	padding-bottom: 12px;
+}
+
+h5{
+   padding-top: 25px;
+}
+
+h3{
+	 padding: 30px;
+}
+
+input[type="text"]{
+ 	margin:10px;
+ }
+ 
+ input[type="password"]{
+ 	margin:10px;
+ }
+ 
+ input[type="submit"]{
+ 	margin:10px;
+ }
+ 
+ input#email.ggg{
+ margin-left: 40px;
+ }
+ 
+
+#onclick:hover {
+  border: 1px solid #0099cc;
+  background-color: #00aacc;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+#onclick:disabled
+{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+ 
+input#email.ggg {
+    margin-left: 10px; 
+}

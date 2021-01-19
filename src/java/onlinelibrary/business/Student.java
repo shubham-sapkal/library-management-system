@@ -10,7 +10,7 @@ public class Student implements Serializable {
 	private String email;
 	private String firstName;
 	private String lastName;
-	private String salt;
+	
 
 	public Student() {
 		username="";
@@ -18,17 +18,17 @@ public class Student implements Serializable {
 		email = "";
 		firstName = "";
 		lastName = "";
-		setSalt("");
+		
 	}
 
-	public Student(String sid, String username,String password,String firstName, String lastName, String email, String salt) {
+	public Student(String sid, String username,String password,String firstName, String lastName, String email) {
 		this.sid = sid;
 		this.username = username;
 		this.password = password;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
-		this.salt = salt;
+		
 	}
 
 	public String getEmail() {
@@ -79,18 +79,12 @@ public class Student implements Serializable {
 		this.lastName = lastName;
 	}
 
-	public String getSalt() {
-		return salt;
-	}
-
-	public void setSalt(String salt) {
-		this.salt = salt;
-	}
+	
 
 	@Override
 	public String toString() {
 		return "Student [sid=" + sid + ", username=" + username + ", password=" + password + ", email=" + email
-				+ ", firstName=" + firstName + ", lastName=" + lastName + ", salt=" + salt + "]";
+				+ ", firstName=" + firstName + ", lastName=" + lastName + "]";
 	}
 
 

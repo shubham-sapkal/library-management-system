@@ -47,6 +47,7 @@ public class StudentRegister extends HttpServlet {
 			session.setAttribute("studentid",sid);
 			System.out.println("student id is "+ session.getAttribute("studentid"));
 
+                        /*
 			// check strength requirements
 			String message1;
 			try {
@@ -74,8 +75,9 @@ public class StudentRegister extends HttpServlet {
 			request.setAttribute("salt", salt);
 			request.setAttribute("saltedAndHashedPassword", saltedAndHashedPassword);
 
+                        */
 			// store data in User object
-			Student user = new Student(sid, username, saltedAndHashedPassword, firstName, lastName, email,salt);
+			Student user = new Student(sid, username, password, firstName, lastName, email);
 
 			System.out.println("salt before saving " + user);
 

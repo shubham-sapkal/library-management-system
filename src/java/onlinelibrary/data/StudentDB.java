@@ -11,8 +11,8 @@ public class StudentDB {
         PreparedStatement ps = null;
         
 
-        String query = "INSERT INTO Student (studentid, firstname, lastname, username, email, password,salt) "
-                + "VALUES (?, ?, ?, ?, ?, ?,?)";
+        String query = "INSERT INTO student (studentid, firstname, lastname, username, email, password) "
+                + "VALUES (?, ?, ?, ?, ?, ?)";
         try {
             ps = connection.prepareStatement(query);
             ps.setString(1, user.getSid());
@@ -21,7 +21,7 @@ public class StudentDB {
             ps.setString(4, user.getUsername());
             ps.setString(5, user.getEmail());
             ps.setString(6, user.getPassword());
-            ps.setString(7,user.getSalt());
+            
             return ps.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e);

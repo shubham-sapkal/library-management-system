@@ -24,23 +24,16 @@ public class LoginDaoStudent {
 		String query = "SELECT * FROM student WHERE username = ? AND password = ?";
 		try {
 			ps = connection.prepareStatement(query);
-                        ps.setString(2,username);
-                        ps.setString(1, password);
+                        ps.setString(1,username);
+                        ps.setString(2, password);
                         rs= ps.executeQuery();
                         while(rs.next()){
                             name= rs.getString("firstname");
                             existingpass= rs.getString("password");
-                                            //salt= rs.getString("salt");
-                                            /*
-                                            try {
-                                                    newpwd= PasswordUtil.hashPassword(hashedpwd + salt);
-                                            } catch (NoSuchAlgorithmException e) {
-                                                    // TODO Auto-generated catch block
-                                                    e.printStackTrace();
-                                            }*/
-                            }
+                                            
+                        }
 			
-			return name;
+			
                         
 		} catch (SQLException e) {
 			System.out.println(e);
@@ -49,5 +42,7 @@ public class LoginDaoStudent {
 			DBUtil.closePreparedStatement(ps);
 			pool.freeConnection(connection);
 		}
+                
+                return name;
 	}
 }

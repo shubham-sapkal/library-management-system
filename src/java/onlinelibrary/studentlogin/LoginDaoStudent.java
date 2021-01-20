@@ -1,6 +1,5 @@
 package onlinelibrary.studentlogin;
 
-import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -8,7 +7,6 @@ import java.sql.SQLException;
 
 import onlinelibrary.data.ConnectionPool;
 import onlinelibrary.data.DBUtil;
-import onlinelibrary.util.PasswordUtil;
 
 public class LoginDaoStudent {
     

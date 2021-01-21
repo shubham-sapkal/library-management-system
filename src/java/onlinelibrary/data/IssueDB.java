@@ -24,6 +24,8 @@ public class IssueDB {
 			ps.setString(1, issue.getBookid());
 			ps.setString(2, issue.getStudentid());
 			return ps.executeUpdate();
+                        
+                      
 		} catch (SQLException e) {
 			System.out.println(e);
 			return 0;
@@ -41,7 +43,7 @@ public class IssueDB {
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		//int sid= Integer.valueOf(studentid);
-		String query = "SELECT * FROM Book inner join Issue on Book.bookid= Issue.bookid where Issue.studentid= ? ;";
+		String query = "SELECT * FROM book inner join issue on book.bookid= issue.bookid where issue.studentid= ? ;";
 		try {
 			ps = connection.prepareStatement(query);
 			ps.setString(1,studentid);
@@ -54,7 +56,7 @@ public class IssueDB {
 
 				book.setTitle(rs.getString("title"));
 				book.setAuthor(rs.getString("author"));
-				book.setPubdate(rs.getString("publicationdate"));
+				book.setPubdate(rs.getString("pubdate"));
 				books.add(book);
 
 			}
@@ -74,7 +76,7 @@ public class IssueDB {
 		Connection connection = pool.getConnection();
 		PreparedStatement ps = null;
 
-		String query = "DELETE FROM Issue "
+		String query = "DELETE FROM issue "
 				+ "WHERE bookid = ?";
 		try {
 			ps = connection.prepareStatement(query);

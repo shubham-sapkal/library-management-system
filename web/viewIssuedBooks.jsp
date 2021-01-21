@@ -20,8 +20,8 @@
     <div id="navbarCollapse" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
         <li class="active"><form action = "StudentLogin" method = "post">
-                    <button type ="submit" name="Action" value="view">View All Books</button> 
-                    <button type ="submit" name="Action" value="issue">View Issued Books</button></form> 
+                    <li class="active"><a href="viewIssuedBooks.jsp">View Issued Books</a></li>
+                    <li class="active"><a href="viewBooks.jsp">View All Books</a></li>
                     
                    <!--  <li class="active"><a href="viewIssuedBooks.jsp">View Issued Books</a></li></li> -->
         </ul>
@@ -47,6 +47,9 @@
     </thead>
     <tbody>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    
+    
+    
     <c:forEach var="book" items="${book}">
   <tr>
     <td>${book.getBookid()}</td>

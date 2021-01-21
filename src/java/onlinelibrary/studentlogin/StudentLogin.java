@@ -39,11 +39,13 @@ public class StudentLogin extends HttpServlet {
 			}
 			request.setAttribute("message", message);
                         */
-			if(LoginDaoStudent.getName(username, pass) != null) {
+			if(LoginDaoStudent.getName(username, pass,request) != null) {
+                            
 				HttpSession session = request.getSession(true);
 				ArrayList<Book> bookslist = new ArrayList<Book>();
 				bookslist = BookDB.selectBooks();
 
+                                session.setAttribute("username",username);
 
 				request.setAttribute("book", bookslist);
 				//request.setAttribute("book", issuelist);

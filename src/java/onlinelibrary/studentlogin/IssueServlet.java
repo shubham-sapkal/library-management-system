@@ -26,6 +26,8 @@ public class IssueServlet extends HttpServlet {
 		boolean issue = request.getParameter("issue") != null;
 		boolean remove = request.getParameter("remove") != null;
 		HttpSession session = request.getSession(true);
+                
+                System.out.println("Username = "+session.getAttribute("studentid"));
 
 		if (issue) {
 

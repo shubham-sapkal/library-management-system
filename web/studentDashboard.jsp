@@ -20,11 +20,13 @@
     <div id="navbarCollapse" class="collapse navbar-collapse">
      
         <ul class="nav navbar-nav">
-            <li class="active"><form action = "StudentLogin" method = "post">
+            <!-- <li class="active"><form action = "StudentLogin" method = "post">
             <button type ="submit" name="Action" value="view">View All Books</button>
             <button type ="submit" name="Action" value="issue">View Issued Books</button></form> 
+            -->
             
-            <!-- <li><a href="viewIssuedBooks.jsp">View Issued Books</a></li> </li> -->
+             <li class="active"><a href="viewIssuedBooks.jsp">View Issued Books</a></li>
+             <li class="active"><a href="viewBooks.jsp">View All Books</a></li>
         </ul>
         </form>
         <ul class="nav navbar-nav navbar-right">

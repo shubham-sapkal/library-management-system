@@ -1,4 +1,5 @@
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/sql" prefix = "sql"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,14 +21,15 @@
     </div>
     <!-- Collection of nav links and other content for toggling -->
     <div id="navbarCollapse" class="collapse navbar-collapse">
-        <ul class="nav navbar-nav">
-        <li class="active">
-        <form action = "StudentLogin" method = "post">
-                    <button type ="submit" name="Action" value="view">View All Books</button>
-                                        <button type ="submit" name="Action" value="issue">View Issued Books</button></form> 
-                    
-                    <!-- <li><a href="viewIssuedBooks.jsp">View Issued Books</a></li> --> 
-       	 </ul>
+        <<ul class="nav navbar-nav">
+            <!-- <li class="active"><form action = "StudentLogin" method = "post">
+            <button type ="submit" name="Action" value="view">View All Books</button>
+            <button type ="submit" name="Action" value="issue">View Issued Books</button></form> 
+            -->
+            
+             <li class="active"><a href="viewIssuedBooks.jsp">View Issued Books</a></li>
+             <li class="active"><a href="viewBooks.jsp">View All Books</a></li>
+        </ul>
         </form>
         <ul class="nav navbar-nav navbar-right">
             <li><a href="studentLogin.jsp">Logout</a></li>
@@ -40,8 +42,8 @@
     <form name="myIssueServlet" action="IssueServlet" method="Post">  
     <h3>List of Books available in the library</h3> 
     <sql:setDataSource var = "snapshot" driver = "com.mysql.jdbc.Driver"
-         url = "jdbc:mysql://tiger.ceonkd3lm0ub.us-east-2.rds.amazonaws.com:3306/onlinelibrary"
-         user = "kashwath"  password = "tigerlion"/>
+         url = "jdbc:mysql://localhost:3306/onlinelibrary"
+         user = "root"  password = ""/>
          
 		<sql:query dataSource="${snapshot}" var="result">
 		SELECT * from Book;
@@ -61,7 +63,7 @@
       </tr>
     </thead>
     <tbody>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    
    
     <c:forEach var="row" items="${result.rows}">
     
@@ -69,7 +71,7 @@
 	    <td><input type="hidden" name="bookid" value="<c:out value='${row.bookid}'/>">${row.bookid}</td>
 	    <td>${row.title}</td>
 	    <td>${row.author}</td>
-	    <td>${row.publicationdate}</td>
+	    <td>${row.pubdate}</td>
 	    <td>${row.quantity}</td>
 	    <td><button type="button" name="issue" value='${row.bookid}' onclick="f1(this)" class="clickMe" id="<c:out value='${row.bookid}'/>">Issue Book</button><br></td>
 	    <td><button type="submit" name="remove" value='${row.bookid}' id="onclick">Remove Book</button><br></td>
